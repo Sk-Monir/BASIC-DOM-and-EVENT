@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Dom Event</title>
+</head>
+
+<body>
+    <!-- option-1 directly use on html element  -->
+    <h1 ondblclick="console.log('hello dblclick')">Welcome on my dom Event ondblclick()</h1>
+    <button onclick="console.log(45)">I am on click</button><br><br>
+    <button onclick="console.log(60)">I am onclick()</button><br><br>
+    <button onclick="document.body.style.backgroundColor='yellow'">I am onclick() color inline js dom event
+        coloryellow</button><br><br>
+
+    <!-- option-2 use onclick add colorRed() function  -->
+    <button onclick="colorRed()">I am onclick() js dom event color red</button><br><br>
+
+    <!-- Option-3 use assigning function in script target with getElementById -->
+    <button id="color-blue">I am onclick() js dom event by getElementById() color blue</button><br><br>
+
+    <!-- directly assign function -->
+    <button id="color-purple">I am onclick() js dom event by getElementById() color purple</button><br><br>
+
+    <!-- Oprion-4 addEventListener-->
+     <!-- way-1 call function-->
+    <button id="color-pink">I am addEventListener js dom event color pink</button><br><br>
+    <!-- way-2 direct function add-->
+    <button id="color-green">I am addEventListener js dom event color Green</button><br><br>
+    <!-- way-3 direct function no name every thing in one line-->
+    <button id="color-magenta">I am addEventListener js dom event color magenta</button><br><br>
+
+    <script src="js/event.js"></script>
+    <script>
+        document.getElementById('color-magenta').addEventListener('click',function(){
+            document.body.style.backgroundColor = 'magenta';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>github-delete </title>
+</head>
+<body>
+    <h1 id="heading-text">i am delete </h1>
+    <input id="input" type="text" placeholder="Please type delete">
+    <button id="btn" disabled> delete</button>
+
+
+    <script>
+
+        document.getElementById('input').addEventListener('keyup' ,function(event){
+            const text = event.target.value;
+            const deleteBtn = document.getElementById('btn')
+            if( text ==='delete'){
+                deleteBtn.removeAttribute('disabled');
+            }else{
+                deleteBtn.setAttribute('disabled', true);
+            }
+        });
+
+        document.getElementById('btn').addEventListener('click' , function(){
+            const text = document.getElementById('heading-text');
+            text.style.display ='none';
+        });
+    </script>
+</body>
+</html>

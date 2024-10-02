@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final - event Handler</title>
+</head>
+
+<body>
+    <h1>Final Dom Even handler </h1>
+    <h2 id="handel-event">default text</h2>
+    <button onclick="clickHandel()">handel-event by onclick() function</button>
+    <button id="handel-eventListener">handel by eventListener</button>
+
+    <!-- set text for input text -->
+    <p id="input-text-display">i am default text Input in my main text</p>
+    <input id="input-field" type="text">
+    <button id="btn-update">update</button>
+
+    <script>
+        // option 1 by onclick function
+        function clickHandel() {
+            const handelEvent = document.getElementById('handel-event');
+            handelEvent.innerText = 'Handled  this function  by onclick() attribute ';
+        }
+        // option 2 by handling eventListener
+        document.getElementById('handel-eventListener').addEventListener('click', function () {
+            const handelEvent = document.getElementById('handel-event');
+            handelEvent.innerText = 'text update by eventListener ';
+        });
+
+        // how to get value for input
+
+        document.getElementById('btn-update').addEventListener('click', function () {
+            const inputField = document.getElementById('input-field');
+            const inputText = inputField.value;
+
+            const text = document.getElementById('input-text-display');
+            text.innerText = inputText;
+            inputField.value = '';
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event delegate </title>
+</head>
+
+<body>
+    <h1>Exploring Event</h1>
+    <section id="section-container">
+        <ul id="ul-container">
+            <li class="item">Lorem, ipsum.</li>
+            <li class="item">Ea, aut.</li>
+            <li class="item">Consectetur, voluptate?</li>
+            <li class="item">Ab, illum?</li>
+            <li class="item">Veritatis, dolor.</li>
+            <li class="item">Quam, quae?</li>
+        </ul>
+        <button id="btn"> add more</button>
+    </section>
+
+
+    <script>
+        // const items = document.getElementsByClassName('item');
+        // for (const item of items) {
+        //     item.addEventListener('click', function (event) {
+        //         event.target.parentNode.removeChild(event.target);
+        //     });
+        // }
+
+
+        document.getElementById('ul-container').addEventListener('click', function () {
+            event.target.parentNode.removeChild(event.target);
+        });
+
+        // create  new  dynamic element 
+        document.getElementById('btn').addEventListener('click', function () {
+            const listContainer = document.getElementById('ul-container');
+            const li = document.createElement('li');
+            li.innerText = 'brand  new item add ';
+            li.classList.add('item');
+            listContainer.appendChild(li)
+
+        });
+    </script>
+</body>
+
+</html>

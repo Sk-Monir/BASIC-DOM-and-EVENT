@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour of Dom (Document Object Model )</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to my Dom </h1>
+    </header>
+
+    <main>
+        <h2 id="domdom">my awesome Dom Project Start</h2>
+        <ul class="quary-list">
+            <li class="dom">jamgola</li>
+            <li class="dom">golgola</li>
+            <li class="dom">alogola</li>
+            <li class="dom2">kalogola</li>
+            <li>balogola</li>
+        </ul>
+        <ul class="quary-list-2">
+            <li class="dom">jamgola</li>
+            <li class="dom">golgola</li>
+            <li class="dom">alogola</li>
+            <li class="dom2">kalogola</li>
+            <li>balogola</li>
+        </ul>
+    </main>
+
+    <section id="count">
+        <h1>Count Number</h1>
+        <p><span id="number">0</span></p>
+        <button class="" id="countPlus">+</button><button class="" id="countMinus">-</button>
+    </section>
+
+    <script>
+        const number = document.getElementById('number');
+        const countPlus = document.getElementById('countPlus')
+        const countMinus = document.getElementById('countMinus')
+        let count = 0;
+        countPlus.addEventListener('click', function () {
+            count += 1;
+            number.innerText = count;
+        });
+        countMinus.addEventListener('click', function () {
+            count -= 1;
+            number.innerText = count;
+        });
+        //1. document.getElementsByTagName('li');
+        const ulCollection = document.getElementsByTagName('li');
+        // ulCollection.innerText = 'alo fol';//not working
+        for (const li of ulCollection) {
+            // console.log(li.innerText ='alo');
+        }
+
+        //2.  documnet.getElementById('domdom');
+        document.getElementById('domdom').innerText = 'my awesome dom make my gam';
+
+        //3. document.getElementsByClassName('dom');
+        const classCollection = document.getElementsByClassName('dom');
+        for (const classs of classCollection) {
+            console.log(classs);
+        }
+
+        //4 document.querySelector()
+        const querySelect = document.querySelector('.quary-list li');
+        querySelect.innerText = 'begun';
+
+        //5 document.querySelectorAll()
+        const querySelect2 = document.querySelectorAll('.quary-list-2 li');
+        for (const li2 of querySelect2) {
+            li2.innerText = 'komola';
+        }
+    </script>
+    <script src="js/dom.js">
+
+    </script>
+</body>
+
+</html>

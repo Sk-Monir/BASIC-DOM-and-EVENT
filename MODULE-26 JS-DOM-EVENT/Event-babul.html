@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Babul</title>
+</head>
+<style>
+    body {
+        border: 1px solid red;
+        padding: 10px;
+    }
+
+    ul {
+        border: 1px solid rgb(149, 255, 0);
+        padding: 10px;
+    }
+
+    section {
+        border: 1px solid rgb(119, 0, 255);
+        padding: 10px;
+    }
+
+    #item1 {
+        border: 1px solid rgb(130, 126, 182);
+        padding: 10px;
+    }
+
+    h1 {
+        border: 1px solid rgb(0, 242, 255);
+        padding: 10px;
+    }
+</style>
+
+<body id="body">
+    <!-- Exploring Event Babul -->
+    <h1>Exploring Event Babul</h1>
+    <section id="section-container">
+        <ul id="ul-content">
+            <li id="item1">Lorem, ipsum.</li>
+            <li id="item2">Ullam, quas?</li>
+            <li id="item3">Eaque, maxime?</li>
+            <li id="item4">Repudiandae, voluptas.</li>
+            <li id="item5">Vitae, repellat?</li>
+        </ul>
+    </section>
+
+
+    <script>
+        document.getElementById('item1').addEventListener('click', function (event) {
+            console.log('item1 clicked ');
+            // event.stopPropagation();
+            event.stopImmediatePropagation();
+        });
+        document.getElementById('item1').addEventListener('click', function (event) {
+            console.log('item1 clicked ');
+
+        });
+        document.getElementById('item1').addEventListener('click', function (event) {
+            console.log('item1 clicked ');
+
+        });
+        document.getElementById('item1').addEventListener('click', function (event) {
+            console.log('item1 clicked ');
+
+        });
+
+        // document.getElementById('item1').addEventListener('click', function (event) {
+        //     console.log('item1 clicked ');
+        //     event.stopPropagation();
+        // });
+        document.getElementById('ul-content').addEventListener('click', function () {
+            console.log('i am target ul-content');
+        });
+        document.getElementById('section-container').addEventListener('click', function () {
+            console.log('i am target section container');
+        });
+        document.getElementById('body').addEventListener('click', function () {
+            console.log('i am target body container');
+        });
+    </script>
+</body>
+
+</html>
